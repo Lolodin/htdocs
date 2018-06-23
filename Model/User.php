@@ -67,20 +67,7 @@ class User
 
     }
 
-    public static function checkBDEmail($email)
-    {
 
-        $db = DB::dbGet();
-        $sql ="SELECT * FROM students WHERE email = :email";
-       // $result= $db->query($sql);
-        $result =$db->prepare($sql);
-        $result->bindParam(':email',$email, PDO::PARAM_STR);
-        $result->execute();
-        $a=(bool)$result->rowCount();
-if ($a!=0)
-    return true;
-else
-return false;
 
 
 
@@ -94,4 +81,4 @@ return false;
 
 //______________________________________________________________________
 
-}
+
