@@ -59,11 +59,10 @@ class User
         $result= $db->prepare($sql);
         $result->bindParam( ':email', $email, PDO::PARAM_STR);
         $result->execute();
-        $result->fetchColumn();
-            if ($result->fetchColumn())
+        $a=(bool)$result->rowCount();
+        if ($a!=0)
             return true;
-        else
-            return false;
+        return false;
 
     }
 
