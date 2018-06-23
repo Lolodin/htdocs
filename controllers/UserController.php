@@ -24,7 +24,7 @@ $name     = '';
 $password = '';
 $email    = '';
 
-
+print_r($_POST);
 
     if (isset($_POST['name']))
     {
@@ -33,7 +33,7 @@ $email    = '';
         $email    = $_POST['email'];
 
         $errors = false;
-
+ echo strlen ($name);
        if(User::checkName($name))
        {
            echo 'name - ok';
@@ -58,15 +58,33 @@ $email    = '';
        {
            $errors[] = 'Пароль должен быть больше 6 символов';
        }
+        if (User::checkBDEmail($email))
+        {
+            $errors[]= 'Почтовый адресс уже используется';
+        }
+        else
+        {
+            echo 'email bd - ok';
 
+        }
+        if($errors)
+        {
+            echo 'пользователь не добавлен';        }
+        else
+        {
+            $result = Register::putUser($name, $email, $password);
+            echo 'Пользователь добавлен';
+
+        }
 
 
     }
 
-require_once (ROOT.'/registerPage/index.php');
+
+return $errors;
 
     return true;
-
 }
+
 
 }

@@ -7,13 +7,21 @@
  */
 class Register
 {
-    public static function getUser()
+
+
+    public static function putUser($name, $email, $password)
     {
+
+        $i=1;
         $db = DB::dbGet();
-        $newArray = array();
+      $put = $db->query("INSERT INTO `students`(`login`, `email`, `password`) VALUES ('$name', '$email','$password')");
 
-        $result = $db->query('SELECT  * FROM students');
-
+      $i++;
+      if ($put) {
+          echo 'Сработало';
+      }
+      else
+          echo "Что то пошло не так";
 
     }
 

@@ -13,6 +13,6 @@ define('ROOT', dirname(__FILE__));
 require_once(ROOT.'\components\Route.php');
 require_once (ROOT. '/components/DB.php');
 require_once (ROOT. '/Model/User.php');
-
+require_once (ROOT.'/Model/Register.php');
 $route = new Route();
 $route->run();

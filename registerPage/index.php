@@ -1,6 +1,3 @@
-
-<?php UserController::actionUserput()?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +5,10 @@
     <title>Поле для ввода пароля</title>
 </head>
 <body>
-<?php foreach ($errors as $err) : ?>
+<?php
+$errors = UserController::actionUserput();
+if ($errors)
+foreach ($errors as $err) : ?>
 <p><?php echo $err ?></p>
 <?php   endforeach; ?>
 <h1>Форма входа</h1>

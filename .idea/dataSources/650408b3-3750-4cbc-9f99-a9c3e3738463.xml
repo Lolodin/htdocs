@@ -999,21 +999,43 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="250" parent="244" name="id_2">
+    <column id="250" parent="244" name="login">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="244" name="email">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="244" name="password">
+      <Position>8</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="253" parent="244" name="id_2">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="251" parent="244" name="id">
+    <index id="254" parent="244" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="252" parent="244" name="PRIMARY">
+    <index id="255" parent="244" name="email">
+      <ColNames>email</ColNames>
+      <Type>fulltext</Type>
+    </index>
+    <key id="256" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="253" parent="244" name="id_2">
+    <key id="257" parent="244" name="id_2">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_2</UnderlyingIndexName>
     </key>

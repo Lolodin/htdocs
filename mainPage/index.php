@@ -21,7 +21,10 @@
 
     </tr>
     <?php foreach ( $a as $newsItem  )  :                    ?>
-        <tr>
+        <tr><?php if($newsItem['Name']){}
+            else
+                continue;
+        ?>
         <td><?php echo $newsItem['Name']   ?></td>
         <td><?php echo $newsItem['LastName']   ?></td>
         <td><?php echo $newsItem['idGroup']   ?></td>
