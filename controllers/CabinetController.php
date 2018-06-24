@@ -8,7 +8,16 @@
 
 class CabinetController
 {
+public function actionCabinet()
+{
 
+    $userId = User::checkLogget();
+
+    if($userId) {
+        require_once(ROOT . '/view/cabinet.php');
+    }
+    return true;
+}
 
 
 

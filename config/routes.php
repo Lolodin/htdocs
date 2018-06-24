@@ -9,6 +9,6 @@ return array(
     'main' =>  'main/index',
     'search' => 'main/search',
     'register' => 'main/register',
-
+     'cabinet' => 'cabinet/cabinet',
     'login' => 'main/login'
 );

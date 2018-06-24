@@ -68,7 +68,7 @@ class User
     public static function checkUserDate($email,$password)
     {
         $db = DB::dbGet();
-        $sql ='SELECT * FROM students WHERE email = :email and :password';
+        $sql ='SELECT * FROM students WHERE email = :email and password = :password';
 
         $result= $db->prepare($sql);
         $result->bindParam( ':email', $email, PDO::PARAM_STR);
@@ -81,15 +81,50 @@ class User
         }
         else
         {
-            echo 'Пользхователя не существует';
+
             return false;
         }
 
 
     }
 
+public static function userSession($id)
+{
+    session_start();
+    $_SESSION['user']=$id;
 
 
+}
+public static function checkLogget()
+{
+    session_start();
+    if ( isset($_SESSION['user'])){
+        return $_SESSION['user'];
+    }
+    else
+    {
+        header('Location: /login');
+    }
+
+}
+
+//
+public static function GetuserDate($id)
+{
+
+    $db = DB::dbGet();
+    $userDate =  array();
+    $userSql = $db->query("SELECT * FROM students WHERE id = $id");
+    $i=0;
+    $useRow = $userSql->fetch();
+        $userDate[$i]['id'] = $useRow['id'];
+        $userDate[$i]['Name'] = $useRow['Name'];
+        $userDate[$i]['LastName'] =$useRow['LastName'];
+        $userDate[$i]['idGroup'] = $useRow['idGroup'];
+        $userDate[$i]['Balls'] = $useRow['Balls'];
+    return $userDate;
+
+}
 
 
     }

@@ -9,6 +9,7 @@ class UserController
 {
 
 
+
 public static function actionUserput()
 {
 
@@ -119,17 +120,31 @@ public static function actionUserGet()
             echo 'Некоректные данные для входа';        }
         else
         {
+
             $id = User::checkUserDate($email, $password);
-            echo 'Делаем запрос в БД';
+
 
         }
         if ($id)
         {
-            echo $id;
+
+            User::userSession($id);
+
+            header('Location: /cabinet');
+
+        }
+        else
+        {
+            $errors[] = 'Логин и пароль не совпадают';
         }
 
-        return $errors;
+         return $errors;
     }
 
+
+
 }
+
+
+
 }

@@ -12,11 +12,10 @@ class Register
     public static function putUser($name, $email, $password)
     {
 
-        $i=1;
-        $db = DB::dbGet();
+      $db = DB::dbGet();
       $put = $db->query("INSERT INTO `students`(`login`, `email`, `password`) VALUES ('$name', '$email','$password')");
 
-      $i++;
+
       if ($put) {
           echo 'Сработало';
       }
