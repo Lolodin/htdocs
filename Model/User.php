@@ -65,6 +65,28 @@ class User
         return false;
 
     }
+    public static function checkUserDate($email,$password)
+    {
+        $db = DB::dbGet();
+        $sql ='SELECT * FROM students WHERE email = :email and :password';
+
+        $result= $db->prepare($sql);
+        $result->bindParam( ':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':password',$password,PDO::PARAM_STR);
+        $result->execute();
+        $user = $result->fetch();
+        if ($user)
+        {
+            return $user['id'];
+        }
+        else
+        {
+            echo 'Пользхователя не существует';
+            return false;
+        }
+
+
+    }
 
 
 

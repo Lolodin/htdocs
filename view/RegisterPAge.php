@@ -2,16 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Поле для ввода пароля</title>
+    <a href=/login/ > Вход </a>
+    <title>Поле для  регистрации</title>
 </head>
 <body>
 <?php
+
 $errors = UserController::actionUserput();
 if ($errors)
 foreach ($errors as $err) : ?>
 <p><?php echo $err ?></p>
 <?php   endforeach; ?>
-<h1>Форма входа</h1>
+<h1>Форма регистрации</h1>
 
 <form action='#' method="post">
     <label for="login-field">Ваш логин</label>

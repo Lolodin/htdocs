@@ -8,6 +8,7 @@
 return array(
     'main' =>  'main/index',
     'search' => 'main/search',
-    'register' => 'user/register',
-    'userput' => 'user/userput'
+    'register' => 'main/register',
+
+    'login' => 'main/login'
 );

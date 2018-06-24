@@ -11,7 +11,7 @@ class MainController
     public function actionIndex ()
 {
     $a = Main::getMainPage();
-     require_once(ROOT . '/mainPage/index.php');
+     require_once(ROOT . '/view/MainPage.php');
      return true;
 }
 
@@ -20,8 +20,19 @@ public function actionSearch()
     echo 'search Action';
     return true;
 }
+public static function actionLogin()
+    {
+        echo 'Login';
+        require_once (ROOT.'/view/LoginPage.php');
+        return true;
+    }
+public static function actionRegister()
+    {
 
-
+        echo "register";
+        require_once(ROOT . '/view/RegisterPAge.php');
+        return true;
+    }
 
 
 

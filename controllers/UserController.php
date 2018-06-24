@@ -7,15 +7,7 @@
  */
 class UserController
 {
-    public static function actionRegister()
-    {
 
-
-
-        echo "register";
-        require_once (ROOT. '/registerPage/index.php');
-        return true;
-    }
 
 public static function actionUserput()
 {
@@ -24,7 +16,7 @@ $name     = '';
 $password = '';
 $email    = '';
 
-print_r($_POST);
+
 
     if (isset($_POST['name']))
     {
@@ -33,7 +25,7 @@ print_r($_POST);
         $email    = $_POST['email'];
 
         $errors = false;
- echo strlen ($name);
+
        if(User::checkName($name))
        {
            echo 'name - ok';
@@ -77,14 +69,67 @@ print_r($_POST);
 
         }
 
-
+        return $errors;
     }
 
 
-return $errors;
+return true;
 
-    return true;
 }
 
 
+public static function actionUserGet()
+{
+
+
+    $password = '';
+    $email    = '';
+
+
+
+    if (isset($_POST['email']))
+    {
+
+        $password = $_POST['password'];
+        $email    = $_POST['email'];
+
+        $errors = false;
+
+
+        if(User::checkEmail($email))
+        {
+            echo '$email-Ok';
+        }
+        else
+        {
+            $errors[] = 'Вы ввели некорректный email';
+        }
+        if(User::checkPassword($password))
+        {
+            echo '$password ok';
+        }
+        else
+        {
+            $errors[] = 'Пароль должен быть больше 6 символов';
+        }
+
+        if($errors) //переделать под запрос данных из БД
+        {
+
+            echo 'Некоректные данные для входа';        }
+        else
+        {
+            $id = User::checkUserDate($email, $password);
+            echo 'Делаем запрос в БД';
+
+        }
+        if ($id)
+        {
+            echo $id;
+        }
+
+        return $errors;
+    }
+
+}
 }

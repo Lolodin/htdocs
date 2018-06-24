@@ -33,6 +33,7 @@
 <?php endforeach; ?>
 
             <a href=/register/ > Регистрация </a>
+            <a href=/login/ > Вход </a>
 </table>
 </body>
 </html>
