@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Поле для ввода пароля</title>
+    <a href=/main/1 > Главная страница </a>
 </head>
 <body>
 <?php

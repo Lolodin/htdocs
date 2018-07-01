@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <a href=/login/ > Вход </a>
+    <a href=/main/1 > Главная страница </a>
     <title>Поле для  регистрации</title>
 </head>
 <body>

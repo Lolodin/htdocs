@@ -6,6 +6,7 @@
         </head>
         <body>
         <a href=/logout/ > Выход </a>
+        <a href=/main/1 > Главная страница </a>
 
 
         <table border="1">
