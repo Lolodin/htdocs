@@ -10,5 +10,7 @@ return array(
     'search' => 'main/search',
     'register' => 'main/register',
      'cabinet' => 'cabinet/cabinet',
-    'login' => 'main/login'
+    'login' => 'main/login',
+    'update' => 'user/UserUpdate',
+    'logout' => 'main/logout'
 );

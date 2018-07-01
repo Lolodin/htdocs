@@ -5,7 +5,7 @@
             <title>Личный кабинет</title>
         </head>
         <body>
-
+        <a href=/logout/ > Выход </a>
 
 
         <table border="1">
@@ -21,25 +21,27 @@
 
     </tr>
     <?php
-
-
-
-   $a = User::GetuserDate($userId);
-
-
-
-
-
-
-    foreach ( $a as $newsItem  )  :                    ?>
+   $a = User::getuserDate($userId);
+    foreach ( $a as $newsItem  )  :
+     ?>
         <tr><?php
 
         ?>
-        <td><?php echo $newsItem['Name']   ?></td>
-        <td><?php echo $newsItem['LastName']   ?></td>
+            <form action='update' method="post">
+        <td><input type="text" value="<?php echo $newsItem['Name']   ?>" name="name" ></td>
+        <td><input type="text" value="<?php echo $newsItem['LastName']   ?>" name="lastname"></td>
         <td><?php echo $newsItem['idGroup']   ?></td>
         <td><?php echo $newsItem['Balls']   ?></td>
+
         </tr>
+        <input type="submit" value="Редактировать">
+        </form>
+
+
+
+
+</form>
+
 <?php endforeach; ?>
 
 
