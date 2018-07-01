@@ -8,29 +8,28 @@
 
 Class Main
 {
-    public static function getMainPage()
+    public static function getMainPage() //Принимаем переменную numberPage
     {
         $db = DB::dbGet();
 
-       $newArray = array();
+        $newArray = array();
+        //  $numberPage = $numberPage *5;
+        //$intoPage = $numberPage - 5;
+        $result = $db->query('SELECT  * FROM students'); // Limit $numberPage*5
 
-       $result = $db->query('SELECT  * FROM students');
+        $i = 0;
+        while ($row = $result->fetch()) {
 
-       $i = 0;
-           while ($row = $result->fetch())
-           {
-
-               $newArray[$i]['id'] = $row['id'];
-               $newArray[$i]['Name'] = $row['Name'];
-               $newArray[$i]['LastName'] =$row['LastName'];
-               $newArray[$i]['idGroup'] = $row['idGroup'];
-               $newArray[$i]['Balls'] = $row['Balls'];
-               $i++;
+            $newArray[$i]['id'] = $row['id'];
+            $newArray[$i]['Name'] = $row['Name'];
+            $newArray[$i]['LastName'] = $row['LastName'];
+            $newArray[$i]['idGroup'] = $row['idGroup'];
+            $newArray[$i]['Balls'] = $row['Balls'];
+            $i++;
 
 
-           }
-           return $newArray;
-
+        }
+        return $newArray;
 
 
     }
@@ -38,6 +37,35 @@ Class Main
 
 
 
+    public static function getFive($numberPage)
+    {
+        $db = DB::dbGet();
+
+        $newArray = array();
+        $numberPage = $numberPage*5;
+
+        $intoPage = $numberPage - 5;
+
+        $result = $db->query("SELECT  * FROM students LIMIT $intoPage, $numberPage ");
+
+        $i = 0;
+        while ($row = $result->fetch())
+        {
+
+            $newArray[$i]['id'] = $row['id'];
+            $newArray[$i]['Name'] = $row['Name'];
+            $newArray[$i]['LastName'] =$row['LastName'];
+            $newArray[$i]['idGroup'] = $row['idGroup'];
+            $newArray[$i]['Balls'] = $row['Balls'];
+            $i++;
+
+
+        }
+        return $newArray;
+
+
+
+    }
 
 
 

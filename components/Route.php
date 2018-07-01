@@ -40,11 +40,14 @@ class Route
                 $controllerName = ucfirst($controllerName);//
                 $actionName = 'action' . ucfirst(array_shift($segments)); // $segments =''
 
+                if($segments[0]) {
+                    $numberPage = $segments[0];
 
+                }
                 // $controllerName = ucfirst(array_shift($segments)).'Controller';
                 // $controllerName = $result . 'Controller';
                 // $actionName = 'action' . ucfirst(array_shift($segments));
-
+                /*Добавить переменную с параметрами, которые будут передаваться в нужный контроллер    */
 
 
 
@@ -54,7 +57,7 @@ class Route
                     include_once($controllerFile);
                 }
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName();
+                $result = $controllerObject->$actionName($numberPage);
 
 
                 if ($result != null) {

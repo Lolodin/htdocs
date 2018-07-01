@@ -8,10 +8,19 @@
 include_once (ROOT. '/Model/Main.php');
 class MainController
 {
-    public function actionIndex ()
+    public function actionIndex ($numberPage) //Передать параметры в action
 {
-    $a = Main::getMainPage();
-     require_once(ROOT . '/view/MainPage.php');
+     if ($numberPage)
+     {
+         $a = Main::getFive($numberPage);
+     }
+     else
+     {
+         header('Location: /main/1');
+     }
+    require_once (ROOT. '/components/PageGenerate.php');
+
+    require_once(ROOT . '/view/MainPage.php');
      return true;
 }
 

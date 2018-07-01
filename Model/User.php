@@ -129,10 +129,10 @@ public static function getuserDate($id)
 public static function updateUserDate($id,$name,$lastName,$idGroup,$balls)
 
 {
-    echo $id, $name, $lastName, $idGroup, $balls;
+
     $db = DB::dbGet();
-    $userUPD = $db->query("UPDATE `students` SET `Name`=$name,`LastName`=$lastName,`idGroup`=$idGroup,`Balls`=$balls WHERE `id`= $id");
- return true;
+    $userUPD = $db->query("UPDATE `students` SET `Name`='$name',`LastName`='$lastName',`idGroup`=$idGroup,`Balls`=$balls WHERE `id`=$id");
+    return $userUPD;
 
 
 }

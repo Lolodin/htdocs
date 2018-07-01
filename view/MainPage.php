@@ -20,7 +20,11 @@
 
 
     </tr>
-    <?php foreach ( $a as $newsItem  )  :                    ?>
+    <?php
+
+
+
+    foreach ( $a as $newsItem  )  :                    ?>
         <tr><?php if($newsItem['Name']){}
             else
                 continue;
@@ -34,6 +38,20 @@
 
             <a href=/register/ > Регистрация </a>
             <a href=/login/ > Вход </a>
+
+            <?php
+            $generatePage = new PageGenerate();
+            $amountPage = $generatePage->GeneratePage();
+
+
+
+
+
+            foreach ($amountPage as $page) :
+            ?>
+           <a href="/main/<?php   echo $page
+            ?>/" > <?php echo $page ?> </a>
+            <?php  endforeach; ?>
 </table>
 </body>
 </html>

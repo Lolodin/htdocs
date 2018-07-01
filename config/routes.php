@@ -6,7 +6,8 @@
  * Time: 11:08
  */
 return array(
-    'main' =>  'main/index',
+    'main/([0-9]+)' =>  'main/index/$1',
+    'main' => 'main/index',
     'search' => 'main/search',
     'register' => 'main/register',
      'cabinet' => 'cabinet/cabinet',

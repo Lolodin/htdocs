@@ -122,13 +122,14 @@ class UserController
 
 
         if (isset($_POST['name'])) {
-print_r($_POST);
+
             $newUserName = $_POST['name'];
             $newUserLastName = $_POST['lastname'];
             $errors = false;
             $userID = User::checkLogget();
             User::updateUserDate($userID, $newUserName, $newUserLastName, 0, 0);
-           // header('Location: /cabinet');
+
+            header('Location: /cabinet');
         }
 
     }
