@@ -18,12 +18,12 @@ return $countStudent;
     public function GeneratePage() //Create amount page, return amount Page
     {
       $countStudent = $this->getCountStudent();
-      $standartpage = 5;
+      $standartpage = 0;
       $countPage = array();
       $i = 0;
       while($countStudent>$standartpage)
       {
-          $standartpage += $standartpage;
+          $standartpage = $standartpage + 5;
           $i++;
           $countPage[] = $i;
       }

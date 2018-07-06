@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
         <head>
+            <link href="/CSS/MainPage.css"  type="text/css" rel="stylesheet"  />
             <meta charset="utf-8">
             <title>Список Студентов</title>
         </head>
@@ -44,10 +45,12 @@
             $amountPage = $generatePage->GeneratePage();
 
 
+            if ($amountPage==1)   //if one page, pagination off
+            {
 
-
-
-            foreach ($amountPage as $page) :
+            }
+            else
+                foreach ($amountPage as $page) :
             ?>
            <a href="/main/<?php   echo $page
             ?>/" > <?php echo $page ?> </a>

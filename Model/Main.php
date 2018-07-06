@@ -44,9 +44,9 @@ Class Main
         $newArray = array();
         $numberPage = $numberPage*5;
 
-        $intoPage = $numberPage - 5;
+        $intoPage = $numberPage - 4;
 
-        $result = $db->query("SELECT  * FROM students LIMIT $intoPage, $numberPage ");
+        $result = $db->query("SELECT  * FROM students WHERE id BETWEEN $intoPage AND $numberPage");
 
         $i = 0;
         while ($row = $result->fetch())
