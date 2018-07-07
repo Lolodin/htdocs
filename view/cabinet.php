@@ -5,8 +5,8 @@
             <title>Личный кабинет</title>
         </head>
         <body>
-        <a href=/logout/ > Выход </a>
-        <a href=/main/1 > Главная страница </a>
+        <a class="upPanel" href=/logout/ > Выход </a>
+        <a class="upPanel" href=/main/1 > Главная страница </a>
 
 
         <table border="1">

@@ -1,12 +1,10 @@
+div
+{
+    border-width: 5px;
+    border-style: solid;
+    border-color: red;
+}
 table
 {
-    color: chartreuse;
-}
-tr
-{
-    color: black;
-}
-caption
-{
-    color: blue;
+    border: 2px;
 }

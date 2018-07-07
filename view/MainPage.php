@@ -7,7 +7,10 @@
         </head>
         <body>
 
-
+        <div class="lol">
+            <p class="LolRed">Регистрация</p>
+            <p> Вход </p>
+        </div>
 
         <table border="1">
 
@@ -36,9 +39,10 @@
         <td><?php echo $newsItem['Balls']   ?></td>
         </tr>
 <?php endforeach; ?>
-
-            <a href=/register/ > Регистрация </a>
-            <a href=/login/ > Вход </a>
+<div>
+    <a href=/register/ > <p>Регистрация</p> </a>
+    <a href=/login/ > <p> Вход </p></a>
+</div>
 
             <?php
             $generatePage = new PageGenerate();
