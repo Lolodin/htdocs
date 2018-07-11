@@ -4,20 +4,22 @@
             <link href="/CSS/MainPage.css"  type="text/css" rel="stylesheet"  />
             <meta charset="utf-8">
             <title>Список Студентов</title>
+            <script src="/config/simplescript.js">aaa</script>
         </head>
         <body>
+        <a href=/register/ ><div class="Register"> <p>Регистрация</p></div> </a>
+        <br>
+        <a href=/login/ ><div class="Login"> <p> Вход </p></div></a>
+        <br>
 
-        <div class="lol">
-            <p class="LolRed">Регистрация</p>
-            <p> Вход </p>
-        </div>
 
         <table border="1">
 
 
             <caption>Список Студентов</caption>
+
             <tr>
-                <td>Имя</td>
+                <td itemref="" Имя</td>
                 <td>Фамилия</td>
                 <td>Номер группы</td>
                 <td>Баллы</td>
@@ -38,11 +40,12 @@
         <td><?php echo $newsItem['idGroup']   ?></td>
         <td><?php echo $newsItem['Balls']   ?></td>
         </tr>
+
 <?php endforeach; ?>
-<div>
-    <a href=/register/ > <p>Регистрация</p> </a>
-    <a href=/login/ > <p> Вход </p></a>
-</div>
+
+
+
+
 
             <?php
             $generatePage = new PageGenerate();
@@ -60,5 +63,6 @@
             ?>/" > <?php echo $page ?> </a>
             <?php  endforeach; ?>
 </table>
+
 </body>
 </html>

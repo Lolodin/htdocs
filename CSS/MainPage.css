@@ -1,10 +1,23 @@
 div
 {
-    border-width: 5px;
+    border-width: 2px;
     border-style: solid;
-    border-color: red;
+    border-color: silver;
+    background-size: 20px;
+    margin-right: 75pc;
 }
-table
+tion
 {
-    border: 2px;
+    color: blue;
+
+}
+.Login:focus
+{
+    color: blue;
+  background-color: chartreuse;
+}
+a:active
+{
+
+    color: chartreuse;
 }

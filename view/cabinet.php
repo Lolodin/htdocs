@@ -31,8 +31,8 @@
             <form action='update' method="post">
         <td><input type="text" value="<?php echo $newsItem['Name']   ?>" name="name" ></td>
         <td><input type="text" value="<?php echo $newsItem['LastName']   ?>" name="lastname"></td>
-        <td><?php echo $newsItem['idGroup']   ?></td>
-        <td><?php echo $newsItem['Balls']   ?></td>
+        <td><input type="text" value="<?php echo $newsItem['idGroup']   ?>" name="idGroup" </td>
+        <td><input type="text" value="<?php echo $newsItem['Balls']   ?>" name="Balls"</td>
 
         </tr>
         <input type="submit" value="Редактировать">

@@ -125,9 +125,11 @@ class UserController
 
             $newUserName = $_POST['name'];
             $newUserLastName = $_POST['lastname'];
+            $idGroup = $_POST['idGroup'];
+            $balls = $_POST['Balls'];
             $errors = false;
             $userID = User::checkLogget();
-            User::updateUserDate($userID, $newUserName, $newUserLastName, 0, 0);
+            User::updateUserDate($userID, $newUserName, $newUserLastName, $idGroup, $balls);
 
             header('Location: /cabinet');
         }
