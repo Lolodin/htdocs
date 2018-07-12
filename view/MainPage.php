@@ -14,12 +14,22 @@
 
 
         <table border="1">
+<?php
+$switchSort = new SortStudents();
+$switchSort ->nameSort(true);
 
+
+
+
+
+
+
+?>
 
             <caption>Список Студентов</caption>
 
             <tr>
-                <td itemref="" Имя</td>
+                <td >Имя</td>
                 <td>Фамилия</td>
                 <td>Номер группы</td>
                 <td>Баллы</td>
@@ -60,7 +70,8 @@
                 foreach ($amountPage as $page) :
             ?>
            <a href="/main/<?php   echo $page
-            ?>/" > <?php echo $page ?> </a>
+            ?>/<?php   echo $metodSort
+           ?>" > <?php echo $page ?> </a>
             <?php  endforeach; ?>
 </table>
 

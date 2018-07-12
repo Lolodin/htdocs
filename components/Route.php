@@ -39,10 +39,14 @@ class Route
                 $controllerName = array_shift($segments) . 'Controller'; //
                 $controllerName = ucfirst($controllerName);//
                 $actionName = 'action' . ucfirst(array_shift($segments)); // $segments =''
-
+ 
                 if($segments[0]) {
                     $numberPage = $segments[0];
 
+                }
+                if($segments[1])
+                {
+                    $metodSort = $segments[1];
                 }
                 // $controllerName = ucfirst(array_shift($segments)).'Controller';
                 // $controllerName = $result . 'Controller';
@@ -57,8 +61,15 @@ class Route
                     include_once($controllerFile);
                 }
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName($numberPage);
-
+                echo $actionName;
+                if ($actionName == 'actionIndex')
+                {
+                    $result = $controllerObject->$actionName($metodSort, $numberPage);
+                }
+                else
+                {
+                    $result = $controllerObject->$actionName();
+                }
 
                 if ($result != null) {
                     break;

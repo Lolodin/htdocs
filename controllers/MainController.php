@@ -8,11 +8,12 @@
 include_once (ROOT. '/Model/Main.php');
 class MainController
 {
-    public function actionIndex ($numberPage) //Передать параметры в action
+    public function actionIndex ($metodSort =null ,$numberPage) //Передать параметры в action
 {
+
      if ($numberPage)
      {
-         $a = Main::getFive($numberPage);
+         $a = Main::getFive($metodSort, $numberPage);
      }
      else
      {

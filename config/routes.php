@@ -13,5 +13,6 @@ return array(
      'cabinet' => 'cabinet/cabinet',
     'login' => 'main/login',
     'update' => 'user/UserUpdate',
-    'logout' => 'main/logout'
+    'logout' => 'main/logout',
+    'sort/([A-Z]+)/([0-9]+)'  => 'main/sort/$1/$2'
 );
