@@ -1,38 +1,33 @@
 <!DOCTYPE HTML>
 <html>
         <head>
-            <link href="/CSS/MainPage.css"  type="text/css" rel="stylesheet"  />
+
             <meta charset="utf-8">
             <title>Список Студентов</title>
-            <script src="/config/simplescript.js">aaa</script>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <?php  include_once (ROOT. '/view/Bootstrap.html');
+            ?>
         </head>
         <body>
-        <a href=/register/ ><div class="Register"> <p>Регистрация</p></div> </a>
-        <br>
-        <a href=/login/ ><div class="Login"> <p> Вход </p></div></a>
-        <br>
+
+<?php  include_once (ROOT. '/view/userMenu.php');
+?>
 
 
-        <table border="1">
+        <table border="1" class="table">
 <?php
-$switchSort = new SortStudents();
-$switchSort ->nameSort(true);
-
-
-
-
-
-
+//$switchSort = new SortStudents();
+//$switchSort ->nameSort(true);
 
 ?>
 
             <caption>Список Студентов</caption>
 
             <tr>
-                <td >Имя</td>
-                <td>Фамилия</td>
-                <td>Номер группы</td>
-                <td>Баллы</td>
+                <td id="name" >Имя</td>
+                <td id="lastName">Фамилия</td>
+                <td id="idGroup">Номер группы</td>
+                <td id="balls">Баллы</td>
 
 
     </tr>
@@ -57,23 +52,23 @@ $switchSort ->nameSort(true);
 
 
 
-            <?php
-            $generatePage = new PageGenerate();
-            $amountPage = $generatePage->GeneratePage();
 
-
-            if ($amountPage==1)   //if one page, pagination off
-            {
-
-            }
-            else
-                foreach ($amountPage as $page) :
-            ?>
-           <a href="/main/<?php   echo $page
-            ?>/<?php   echo $metodSort
-           ?>" > <?php echo $page ?> </a>
-            <?php  endforeach; ?>
 </table>
+<?php
+$generatePage = new PageGenerate();
+$amountPage = $generatePage->GeneratePage();
 
+
+if ($amountPage==1)   //if one page, pagination off
+{
+
+}
+else
+    foreach ($amountPage as $page) :
+        ?>
+        <a href="/main/<?php   echo $page
+        ?>/<?php   echo $metodSort
+        ?>" > <?php echo $page ?> </a>
+    <?php  endforeach; ?>
 </body>
 </html>

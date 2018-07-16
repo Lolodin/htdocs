@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Поле для ввода пароля</title>
-    <a href=/main/1 > Главная страница </a>
+    <?php  include_once (ROOT. '/view/Bootstrap.html');
+    ?>
+    <?php  include_once (ROOT. '/view/userMenu.php');
+
+    ?>
 </head>
 <body>
 <?php

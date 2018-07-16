@@ -90,15 +90,18 @@ class User
 
 public static function userSession($id)
 {
-    session_start();
-    $_SESSION['user']=$id;
 
+    $_SESSION['user']=$id;
+    $userSave =  $_SESSION['user'];
+    setcookie('userId', $userSave, time() +3600);
 
 }
 public static function checkLogget()
 {
-    session_start();
+
     if ( isset($_SESSION['user'])){
+
+
         return $_SESSION['user'];
     }
     else
@@ -107,6 +110,18 @@ public static function checkLogget()
     }
 
 }
+    public static function isUser()
+    {
+if (isset($_SESSION['user']))
+{
+
+    return true;
+}
+else
+{
+    return false;
+}
+    }
 
 //
 public static function getuserDate($id)
@@ -136,7 +151,11 @@ public static function updateUserDate($id,$name,$lastName,$idGroup,$balls)
 
 
 }
+
+
+
     }
+
    // public static function putUserDb($name, $email, $password)
   //  {
   //      $db = DB::dbGet();

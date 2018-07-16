@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <a href=/login/ > Вход </a>
-    <a href=/main/1 > Главная страница </a>
+    <?php  include_once (ROOT. '/view/userMenu.php');
+    ?>
     <title>Поле для  регистрации</title>
+    <?php  include_once (ROOT. '/view/Bootstrap.html');
+    ?>
 </head>
 <body>
 <?php

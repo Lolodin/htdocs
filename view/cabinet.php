@@ -3,10 +3,13 @@
         <head>
             <meta charset="utf-8">
             <title>Личный кабинет</title>
+            <?php  include_once (ROOT. '/view/Bootstrap.html');
+            ?>
         </head>
         <body>
-        <a class="upPanel" href=/logout/ > Выход </a>
-        <a class="upPanel" href=/main/1 > Главная страница </a>
+        <?php  include_once (ROOT. '/view/userMenu.php');
+
+        ?>
 
 
         <table border="1">
@@ -41,7 +44,6 @@
 
 
 
-</form>
 
 <?php endforeach; ?>
 

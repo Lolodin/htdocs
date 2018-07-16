@@ -61,7 +61,7 @@ class Route
                     include_once($controllerFile);
                 }
                 $controllerObject = new $controllerName;
-                echo $actionName;
+
                 if ($actionName == 'actionIndex')
                 {
                     $result = $controllerObject->$actionName($metodSort, $numberPage);

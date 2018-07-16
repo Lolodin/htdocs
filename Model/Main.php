@@ -47,7 +47,7 @@ Class Main
 
         $newArray   = array();
             $numberPage = ($numberPage-1) * 5;
-            echo $numberPage;
+
 
 
 
