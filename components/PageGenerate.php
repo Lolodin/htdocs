@@ -10,7 +10,7 @@ class PageGenerate
 {
     public function getCountStudent() // Count students in list
     {
-    $studentList = Main::getMainPage();
+    $studentList  = Main::getMainPage();
     $countStudent = count($studentList);
 return $countStudent;
     }
@@ -19,7 +19,7 @@ return $countStudent;
     {
       $countStudent = $this->getCountStudent();
       $standartpage = 0;
-      $countPage = array();
+      $countPage    = array();
       $i = 0;
       while($countStudent>$standartpage)
       {

@@ -132,11 +132,11 @@ public static function getuserDate($id)
     $userSql = $db->query("SELECT * FROM students WHERE id = $id");
     $i=0;
     $useRow = $userSql->fetch();
-        $userDate[$i]['id'] = $useRow['id'];
-        $userDate[$i]['Name'] = $useRow['Name'];
-        $userDate[$i]['LastName'] =$useRow['LastName'];
-        $userDate[$i]['idGroup'] = $useRow['idGroup'];
-        $userDate[$i]['Balls'] = $useRow['Balls'];
+        $userDate[$i]['id']       = $useRow['id'];
+        $userDate[$i]['Name']     = $useRow['Name'];
+        $userDate[$i]['LastName'] = $useRow['LastName'];
+        $userDate[$i]['idGroup']  = $useRow['idGroup'];
+        $userDate[$i]['Balls']    = $useRow['Balls'];
     return $userDate;
 
 }

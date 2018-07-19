@@ -7,6 +7,11 @@
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
             <?php  include_once (ROOT. '/view/Bootstrap.html');
             ?>
+            <?php
+            $numberpage = $activeNumber->activePageNumber;
+            echo $numberpage;    //Номер текущей страницы
+            ?>
+
         </head>
         <body>
 
@@ -20,17 +25,33 @@
 //$switchSort ->nameSort(true);
 
 ?>
-
+            <p id="name" style="cursor: pointer">adfafafaf</p>
             <caption>Список Студентов</caption>
 
             <tr>
-                <td id="name" >Имя</td>
+                <td id="name" style="cursor: pointer" >Имя</td>
                 <td id="lastName">Фамилия</td>
                 <td id="idGroup">Номер группы</td>
                 <td id="balls">Баллы</td>
 
 
     </tr>
+            <script>
+                $("#name").click(function () {
+                    alert('Вы нажали на элемент "name"');
+                    var param ={
+                        id: 'name';
+                }
+
+                    $.post("Model/Ajax.php", params, function (data) {
+                        var massiv = 555;
+
+
+
+                        $("#echo").val(massiv);
+                    });
+                });
+            </script>
     <?php
 
 

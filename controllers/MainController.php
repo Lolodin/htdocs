@@ -10,6 +10,9 @@ class MainController
 {
     public function actionIndex ($metodSort =null ,$numberPage) //Передать параметры в action
 {
+    $activeNumber = new ActivePage();
+    $activeNumber->getNumber($numberPage);
+
 
      if ($numberPage)
      {
